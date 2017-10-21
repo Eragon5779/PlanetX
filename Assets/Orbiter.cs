@@ -11,6 +11,7 @@ public class Orbiter : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Time.timeScale = 0.1f;
         var dif = this.transform.position - parent.transform.position;
         distance = this.transform.localPosition.magnitude;
         yoff = this.transform.localPosition.y;
@@ -22,6 +23,6 @@ public class Orbiter : MonoBehaviour {
 	void Update () {
         rot += speed * Time.deltaTime;
 
-        this.transform.localPosition = new Vector3(Mathf.Cos(rot), yoff, Mathf.Sin(rot)) * distance;
+        this.transform.localPosition = new Vector3(Mathf.Cos(rot), 0, Mathf.Sin(rot)) * distance;
 	}
 }
